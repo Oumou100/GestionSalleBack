@@ -26,6 +26,7 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/**").permitAll()
+                .requestMatchers("/", "/index.html").permitAll()  // Permet l'accès à la racine sans authentification
                 .anyRequest().authenticated()
             )
             .sessionManagement(session -> 

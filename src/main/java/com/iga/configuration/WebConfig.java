@@ -14,7 +14,7 @@ public class WebConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("http://localhost:4200"); // Autorise Angular
+        config.addAllowedOrigin("https://gestion-de-salles-frontend-master.vercel.app"); // Autorise Angular
         config.addAllowedHeader("*"); // Autorise tous les en-têtes
         config.addAllowedMethod("*"); // Autorise toutes les méthodes HTTP (GET, POST, etc.)
         source.registerCorsConfiguration("/**", config); // Applique à toutes les URL
