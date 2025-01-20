@@ -17,6 +17,7 @@
             height: 100vh;
             color: #fff;
             text-align: center;
+            overflow: hidden; /* Empêche le débordement */
         }
 
         /* Container for the content */
@@ -28,6 +29,7 @@
             width: 80%;
             max-width: 600px;
             animation: fadeIn 2s ease-in-out; /* Animation d'apparition */
+            margin: 10px;
         }
 
         /* Title styles */
@@ -102,12 +104,99 @@
             }
         }
 
+        /* Animation de l'IGA */
+        .iga {
+            font-size: 6rem;
+            color: #2c3e50;
+            font-family: 'Arial', sans-serif;
+            font-weight: bolder;
+            animation: fadeIn 3s ease-in-out infinite, colorChange 4s ease-in-out infinite;
+            display: inline-block;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Animation de fondu */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* Animation des couleurs */
+        @keyframes colorChange {
+            0% {
+                color: #3498db; /* Bleu clair */
+            }
+            25% {
+                color: #2ecc71; /* Vert */
+            }
+            50% {
+                color: #f39c12; /* Jaune */
+            }
+            75% {
+                color: #e74c3c; /* Rouge */
+            }
+            100% {
+                color: #3498db; /* Retour au bleu clair */
+            }
+        }
+
+        /* Media Queries pour responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                width: 90%;
+                max-width: 500px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            .cta-button {
+                font-size: 1.1em;
+                padding: 12px 24px;
+            }
+
+            .iga {
+                font-size: 5rem; /* Taille du texte IGA plus petite sur mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            p {
+                font-size: 0.9em;
+            }
+
+            .cta-button {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+
+            .iga {
+                font-size: 4rem; /* Taille du texte IGA encore plus petite sur très petit écran */
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Logo de l'IGA -->
-        <img src="iga.png" alt="Logo IGA" class="logo">
+        <!-- Texte animé IGA -->
+        <div class="iga">IGA</div>
         
         <h1>Bienvenue sur le Backend de Gestion de Salles</h1>
         <p>Vous êtes connecté au backend API de Gestion de Salles. Pour gérer les réservations et accéder à toutes les fonctionnalités, veuillez vous rendre sur l'interface utilisateur frontale.</p>
